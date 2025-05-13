@@ -1,12 +1,12 @@
 <!-- Unit 13 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
-[  ] Two Different jQuery Animation Methods 
-[  ] Add Five CSS Declarations
-[  ] Include Three Images
+[ x ] Two Interactive Drop-down Inputs 
+[ x ] Two Different jQuery Animation Methods 
+[ x ] Add Five CSS Declarations
+[ x ] Include Three Images
 
 Select ONE Additional Feature to Add  
-[ no ] Feature 1 - Google Font
+[ x ] Feature 1 - Google Font
 [ no ] Feature 2 - Upload a Font
 [ no ] Feature 3 - .mouseover() Method
 [ no ] Feature 4 - :hover Feature 
@@ -21,37 +21,57 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>
+      
+      ⋆｡°✩ Kat Quiz ✩°｡⋆
+     <img src="https://cdn-icons-png.flaticon.com/512/5694/5694744.png" style="height: 40px;">
+    </h1>
+    <h4>
+      Select which answer you think is correct, then check to see if you were right or not!
+    </h4>
     <hr />
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
         🎥 What is my favorite movie?
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">Perks of Being a Wallflower</option>
+          <option value="movie2">Rush Hour</option>
+          <option value="movie3">Me and Earl and the Dying Girl</option>
+          <option value="movie4">Pirates of the Caribbean</option>
         </select>
       </label>
       <button type="submit">Check Movie Answer</button>
     </form>
-    <div id="movie-result"></div>
+    <div id="movie-result"></div> 
     <hr />
     <!-- Book Question -->
     <form id="book-form">
       <label>
-        📖 What is my favorite book?
+        📖 What is my favorite play?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">Dog Sees God</option>
+          <option value="book2">Who's Afraid of Virginia Woolf?</option>
+          <option value="book3">God of Carnage</option>
+          <option value="book4">Lady Windermere's Fan</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
     </form>
     <div id="book-result"></div>
+  
+     <img 
+         id="incorrect_1"
+         src="https://c8.alamy.com/comp/ANMBX3/high-angle-view-of-a-mid-adult-man-showing-thumbs-down-ANMBX3.jpg"
+         style="display: none"
+    />
+    
+     <img 
+         id="correct_1"
+         src="https://image1.masterfile.com/getImage/640-01356922em-high-angle-view-of-a-boy-showing-a-thumbs-up-sign.jpg"
+         style="display: none"
+    />
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       //Movie Question jQuery Code
@@ -61,10 +81,15 @@ Select ONE Additional Feature to Add
         var $answer = $("#movie-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
+          $("#correct_1").hide();
+          $("#incorrect_1").hide();
+        
+        if (answer === "movie4") {
+          $("#movie-result").text("YES! I have an emotional attachment to this movie.");
+          $("#correct_1").show(1000);
         } else {
-          $("#movie-result").text("Try Again!");
+          $("#movie-result").text("oopsie... try again! (great movie though)");
+          $("#incorrect_1").show(1000);
         }
       });
 
@@ -75,10 +100,15 @@ Select ONE Additional Feature to Add
         var $answer = $("#book-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
+        $("#correct_1").hide();
+        $("#incorrect_1").hide();
+        
+        if (answer === "book2") {
+          $("#book-result").text("YESSSS! I LOVE THIS PLAY WITH MY WHOLE HEART!");
+          $("#correct_1").show(1000);
         } else {
-          $("#book-result").text("Try Again!");
+          $("#book-result").text("Not quite... try again!");
+          $("#incorrect_1").fadeIn(1000);
         }
       });
     </script>

@@ -1,22 +1,35 @@
 #movie-result {
-  background: rgb(244, 98, 181);
-  border: 5px solid black;
-  font-size: 24px;
-  height: 160px;
+  background: #d0efdd;
+  border: 3px solid #96ddb5;
+  font-size: 20px;
+  height: 100px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
 #book-result {
-  background: rgb(196, 159, 255);
-  border: 5px solid black;
+  background: #d0efdd;
+  border: 3px solid #96ddb5;
   font-size: 24px;
-  height: 160px;
+  height: 100px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
 hr {
   height: 5px;
-  background-color: black;
+  background-color: #44848e;
 }
+
+h1{
+  color: #72bcc8;
+  border: 1px solid;
+}
+
+body{
+  background-color: #d1eff4;
+  color: #44848e;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap")
